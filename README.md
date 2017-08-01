@@ -6,7 +6,7 @@ The primary use case that inpired pulling this together is using a dockerized [N
 
 ## Installing Configuration.DockerSecrets
 
-Using Nuget, install the [Configuration.DockerSecrets]() package. Your .csproj should include the following:
+Using Nuget, install the [Configuration.DockerSecrets](https://www.nuget.org/packages/Configuration.DockerSecrets/) package. Your .csproj should include the following:
 
 ```xml
 <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
