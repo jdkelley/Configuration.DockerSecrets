@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Configuration.DockerSecrets.Example
 {
@@ -6,7 +9,19 @@ namespace Configuration.DockerSecrets.Example
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile(Path.Combine("hosting.json"), false)
+                .Build();
+
+            var host = new WebHostBuilder()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseKestrel()
+                .UseConfiguration(config)
+                .UseStartup<Startup>()
+                .Build();
+
+            host.Run();
         }
     }
 }
