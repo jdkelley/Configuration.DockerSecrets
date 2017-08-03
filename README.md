@@ -2,7 +2,11 @@
 
 This project is be able to pull docker secrets into a DotNetCore configuration. Originally, I tried writing this from scratch and then came across Microsoft's [implementation](https://github.com/aspnet/Configuration) on GitHub. It is slated to be released with dotnetcore 2.0. Regardless of Microsoft's final implementation, our team needed to use this as soon as possible. 
 
-The primary use case that inpired pulling this together is using a dockerized [NancyFx](http://nancyfx.org/) api on a Docker Swarm. As such, our example application is a NancyFx api.
+The primary use case that inspired pulling this together is using a dockerized [NancyFx](http://nancyfx.org/) api as a service on Docker Swarm. As such, our example application is a NancyFx api.
+
+## Background
+
+Docker secrets are data that "should not be transmitted over a network or stored unencrypted in a Dockerfile or in your application’s source code." [[1]](https://docs.docker.com/engine/swarm/secrets/) The data is encrypted at rest and in transit on the swarm. The default mount point is `/run/secrets/<secret-name>`. 
 
 ## Installing Configuration.DockerSecrets
 
