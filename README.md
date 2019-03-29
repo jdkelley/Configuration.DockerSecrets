@@ -1,5 +1,10 @@
 # Configuration.DockerSecrets
 
+
+| ![Nuget Version](https://img.shields.io/nuget/v/Configuration.DockerSecrets.svg)  ![Nuget Downloads](https://img.shields.io/nuget/dt/Configuration.DockerSecrets.svg) |
+|------|
+
+
 This project is be able to pull docker secrets into a DotNetCore configuration. Originally, I tried writing this from scratch and then came across Microsoft's [implementation](https://github.com/aspnet/Configuration) on GitHub. It is slated to be released with dotnetcore 2.0. Regardless of Microsoft's final implementation, our team needed to use this as soon as possible. 
 
 The primary use case that inspired pulling this together is using a dockerized [NancyFx](http://nancyfx.org/) api as a service on Docker Swarm. As such, our example application is a NancyFx api.
